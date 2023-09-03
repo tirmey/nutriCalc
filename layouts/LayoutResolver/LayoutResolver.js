@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import Modal from '../../components/UI/Modal/Modal';
-import MyTransition from '../../components/UI/MyTransition/MyTransition';
+import Modal from '../../components/ui/Modal/Modal';
+import MyTransition from '../../components/ui/MyTransition/MyTransition';
 import themeDark from '../../themes/themeDark';
 import themeLight from '../../themes/themeLight';
 import { getFromStorage, handleBodyScrollbar } from '../../utils/general';
