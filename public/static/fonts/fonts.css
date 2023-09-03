@@ -1,0 +1,33 @@
+/* Unfortunately, we can't load fonts in Styled Components because of a bug in chromium based browsers that reloads the custom fonts in some situations causing an undesirable FOUT. Move the font load back to styled components when (if ever) cromium fix this bug */
+
+@font-face {
+  font-family: "pgf-regular";
+  src: url("/static/fonts/pgfNow/PGF-Now-Regular.woff");
+  src: url("/static/fonts/pgfNow/PGF-Now-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "pgf-medium";
+  src: url("/static/fonts/pgfNow/PGF-Now-Medium.woff");
+  src: url("/static/fonts/pgfNow/PGF-Now-Medium.otf");
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "pgf-italic";
+  src: url("/static/fonts/pgfNow/PGF-Now-Italic.woff");
+  src: url("/static/fonts/pgfNow/PGF-Now-Italic.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "carrig";
+  src: url("/static/fonts/carrig/CarrigDC-Regular.otf") format("opentype");
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+}
