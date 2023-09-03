@@ -8,7 +8,7 @@ const Home = (props) => {
   return (
       <LayoutResolver
         propsFromComponent={props}
-        content={(<p>Homepage Here!</p>)}
+        content={(<p>Homepage Preview Here!</p>)}
       />
   );
 };
