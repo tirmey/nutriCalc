@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-expressions */
 import { useRef, createRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { isModalOpen, setActiveModals } from '../../../../redux/actions/uiActions';
 import FieldsetStyled from '../../components/Fieldset/FieldsetStyled';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Textarea from '../TextArea/TextArea';
@@ -10,6 +9,7 @@ import DropAreaStyled from './DropAreaStyled';
 import FileCard from './FileCard/FileCard';
 import FileUploaderStyled from './FileUploaderStyled';
 import { checkFiles, uploadErrorMessages } from './FileUploaderUtils';
+import { isModalOpen, setActiveModals } from '../../../../redux/slices/uiSlice';
 
 const FileUploader = props => {
   const {

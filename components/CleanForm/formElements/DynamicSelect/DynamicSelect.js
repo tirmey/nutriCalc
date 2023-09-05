@@ -177,34 +177,37 @@ const DynamicSelect = props => {
   return (
     <>
       <FieldsetStyled
-        className={`${errorMessage ? 'invalid-field' : ''}`}
+        className={`fieldset-dynamic-select ${errorMessage ? 'invalid-field' : ''}`}
       >
-        <label className="select-label" htmlFor={name}>
-          <span>{typeof labelText === 'string' ? labelText : labelText(formState)} {isRequired && (<span className="required-field-asterisk" title="campo de preenchimento obrigatório">*</span>)}</span>
-        </label>
-        {!!subtitle && <p className="fieldset-subtitle">{typeof subtitle === 'string' ? subtitle : subtitle(formState)}</p>}
-        {showLoader && loaderComponent}
-        <InputStyled
-          ref={inputRef}
-          value={typeof inputValue === 'string' ? inputValue : formState[name] ? formState[name] : ''}
-          placeholder={optionsWithState.length ? withOptionsLabel : showLoader ? loadingLabel : withoutOptionsLabel}
-          onChange={changeHandler}
-          onFocus={e => {
-            setShowOptions(true);
-            if (externalInputFocusHandler) {
-              externalInputFocusHandler(e, formState);
-            }
-          }}
-          onBlur={inputBlurHandler}
-          onKeyPress={keyPressHandler}
-          name={name}
-          id={name}
-          autoComplete="off"
-        />
-        <ErrorMessage
-          msg={!errorMessage && warningMsg ? warningMsg : errorMessage}
-          warning={!errorMessage && warningMsg}
-        />
+        <div className='input-wrapper'>
+
+          <label className="select-label" htmlFor={name}>
+            <span>{typeof labelText === 'string' ? labelText : labelText(formState)} {isRequired && (<span className="required-field-asterisk" title="campo de preenchimento obrigatório">*</span>)}</span>
+          </label>
+          {!!subtitle && <p className="fieldset-subtitle">{typeof subtitle === 'string' ? subtitle : subtitle(formState)}</p>}
+          {showLoader && loaderComponent}
+          <InputStyled
+            ref={inputRef}
+            value={typeof inputValue === 'string' ? inputValue : formState[name] ? formState[name] : ''}
+            placeholder={optionsWithState.length ? withOptionsLabel : showLoader ? loadingLabel : withoutOptionsLabel}
+            onChange={changeHandler}
+            onFocus={e => {
+              setShowOptions(true);
+              if (externalInputFocusHandler) {
+                externalInputFocusHandler(e, formState);
+              }
+            }}
+            onBlur={inputBlurHandler}
+            onKeyPress={keyPressHandler}
+            name={name}
+            id={name}
+            autoComplete="off"
+          />
+          <ErrorMessage
+            msg={!errorMessage && warningMsg ? warningMsg : errorMessage}
+            warning={!errorMessage && warningMsg}
+          />
+        </div>
       </FieldsetStyled>
       <DynamicSelectStyled>
         <MyTransition

@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   ${resetStyles}
 
   input {
-    font-family: 'pgf-regular';
+    font-family: var(--fontBold);
   }
 
   button {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-family: 'carrig', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: var(--fontRegular);
     font-size: 62.5%;
     ${styleVars}
   }

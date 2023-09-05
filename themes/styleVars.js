@@ -1,10 +1,6 @@
 const styleVars = `
-  --fontBody: 'carrig';
-  --fontTitle: 'pgf-regular';
-  --fontTitleBold: 'pgf-medium';
-  --fontSubtitle: 'pgf-regular';
-  --fontItalic: 'pgf-italic';
-  --fontButton: 'pgf-regular';
+  --fontRegular: 'source-regular', sans-serif;
+  --fontBold: 'source-bold', sans-serif;
 
   //FONT_SIZES
   --pageSubtitle: 2.6rem;
@@ -35,8 +31,8 @@ const styleVars = `
 
   // border-radius
   --borderRadiusSm: 2px;
-  --borderRadiusBasic: 4px;
-  --borderRadiusBig: 8px;
+  --borderRadiusBasic: 15px;
+  --borderRadiusBig: 60px;
 `;
 
 export default styleVars;

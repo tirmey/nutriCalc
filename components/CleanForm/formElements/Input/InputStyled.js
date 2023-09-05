@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 export default styled.input`
-  background-color: ${props => props.theme.formField || '#F2F2F4'};
+  background-color: ${props => props.theme.formField || '#F2F2F2'};
   font-size: 2rem;
-  width: 100%;
+  max-width: 70%;
+  min-width: 20%;
   position: relative;
-  padding: 1.5rem 2rem;
+  padding: ${({ unit }) => unit ? '.5rem 0 .5rem 2rem' : '1.5rem 2rem'};
   border: 2px solid transparent;
-  border-radius: ${props => props.theme.borderRadiusBasic || '2px'};
+  border-radius: ${({ unit }) => unit ? 'var(--borderRadiusBig) 0 0 var(--borderRadiusBig)' : ' var(--borderRadiusBig)'};
   transition: background-color .5s;
   color: ${props => props.theme.textPrimary || '#333'};
+  text-align: right;
+  height: 4rem;
 
   @media (max-width: 400px) {
     font-size: 1.6rem;
@@ -35,14 +38,16 @@ export default styled.input`
     border-radius: .2rem;
   }
 
-  & ~ label {
-    pointer-events: none;
-    color: ${props => props.theme.textSecondary || '#666'};
-    order: -1;
-    width: 100%;
-    margin-left: 1rem;
-    font-size: 1.3rem;
-    color: ${props => props.theme.textPrimary || '#333'};
+  & ~ .input-unit {
+    border-radius: 0 var(--borderRadiusBig) var(--borderRadiusBig) 0;
+    height: 4rem;
+    background-color: #f2f2f2;
+    padding: 1.2rem 1rem 0rem .5rem;
+    right: 1.5rem;
+    font-family: var(--fontBold);
+    font-size: 1.6rem;
+    color: #888;
+
   }
 
   &.inline-text {
@@ -68,9 +73,10 @@ export default styled.input`
     }
   }
 
-  &[type=number] {
-    padding-right: 4rem;
+  &[inputmode=numeric] {
+    font-size: 2.5rem;
   }
+
 
   &[type=submit] {
     transition: background-color .3s, padding .3s;

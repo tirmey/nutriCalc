@@ -42,6 +42,7 @@ const Input = ({
   subtitle,
   title,
   type,
+  unit,
   value,
   min,
   max,
@@ -50,6 +51,7 @@ const Input = ({
   const warningMsg = warning ? warning(value) : null;
   const [passwordStyle, setPasswordStyle] = useState('hide');
   const notCheckboxOrRadio = type !== 'checkbox' && type !== 'radio';
+
 
   const showPasswordHandler = (e, setStyle) => {
     if (e.currentTarget.previousElementSibling.type === 'password') {
@@ -73,37 +75,43 @@ const Input = ({
           <span>{!labelText ? null : (!notCheckboxOrRadio || typeof labelText === 'string') ? labelText : labelText(formState)} {(isRequired && notCheckboxOrRadio) && (<span className="required-field-asterisk" title="campo de preenchimento obrigatório">*</span>)}</span>
         </label>
         {!!subtitle && <p className="fieldset-subtitle">{typeof subtitle === 'string' ? subtitle : subtitle(formState)}</p>}
-        <InputStyled
-          aria-disabled={readOnly}
-          autoComplete={autoComplete ? '' : 'chrome-off'}
-          autocorrect="off"
-          autoFocus={autoFocus}
-          checked={checked}
-          className={`${inputClasses || ''} ${submitting ? 'submitting-input' : ''} ${value ? '' : 'empty-field'}`}
-          data-data={JSON.stringify(dataset)}
-          defaultValue={defaultValue}
-          disabled={radioAnswers?.answer ? true : !disabled ? null : typeof disabled === 'boolean' ? disabled : disabled(formState)}
-          id={id || name}
-          inputMode={inputMode ? inputMode : (type && type === 'number') ? 'numeric' : 'text'}
-          max={(!max || typeof max === 'string') ? (max || '') : max(formState)}
-          maxLength={maxLength || ''}
-          min={(!min || typeof min === 'string') ? (min || '') : min(formState)}
-          name={name}
-          onClick={clickHandler ? clickHandler : () => {}}
-          onChange={inputHandler}
-          onCopy={copyHandler}
-          onFocus={focusHandler ? focusHandler : () => {}}
-          onBlur={blurHandler ? blurHandler : () => {}}
-          onKeyPress={keyPressHandler ? keyPressHandler : e => { if (e.key === 'Enter' && !submitWithEnter) { e.preventDefault(); } }}
-          placeholder={placeholder || ' '}
-          required={isRequired}
-          readOnly={readOnly}
-          ref={inputRef}
-          tabIndex={readOnly ? -1 : 0}
-          title={title}
-          type={!type || type === 'number' ? 'text' : type}
-          value={value}
-        />
+        <div className='input-unit-wrapper'>
+          <InputStyled
+            aria-disabled={readOnly}
+            autoComplete={autoComplete ? '' : 'chrome-off'}
+            autoCorrect="off"
+            autoFocus={autoFocus}
+            checked={checked}
+            className={`${inputClasses || ''} ${submitting ? 'submitting-input' : ''} ${value ? '' : 'empty-field'}`}
+            data-data={JSON.stringify(dataset)}
+            defaultValue={defaultValue}
+            disabled={radioAnswers?.answer ? true : !disabled ? null : typeof disabled === 'boolean' ? disabled : disabled(formState)}
+            id={id || name}
+            inputMode={inputMode ? inputMode : (type && type === 'number') ? 'numeric' : 'text'}
+            max={(!max || typeof max === 'string') ? (max || '') : max(formState)}
+            maxLength={maxLength || ''}
+            min={(!min || typeof min === 'string') ? (min || '') : min(formState)}
+            name={name}
+            onClick={clickHandler ? clickHandler : () => {}}
+            onChange={inputHandler}
+            onCopy={copyHandler}
+            onFocus={focusHandler ? focusHandler : () => {}}
+            onBlur={blurHandler ? blurHandler : () => {}}
+            onKeyPress={keyPressHandler ? keyPressHandler : e => { if (e.key === 'Enter' && !submitWithEnter) { e.preventDefault(); } }}
+            placeholder={placeholder || ' '}
+            required={isRequired}
+            readOnly={readOnly}
+            ref={inputRef}
+            tabIndex={readOnly ? -1 : 0}
+            title={title}
+            unit={unit}
+            type={!type || type === 'number' ? 'text' : type}
+            value={value}
+          />
+          {unit && (
+            <span className="input-unit">{unit}</span>
+          )}
+        </div>
         {(type === 'password' && passwordStyle === 'show') && (
           <EyeSlash clickHandler={e => showPasswordHandler(e, setPasswordStyle)} classes={`form-password-eye ${info ? 'input-has-info' : ''}`} />
         )}

@@ -31,7 +31,7 @@ const ButtonStyled = styled.button`
     padding: ${size === 'full' ? '0 4rem' : size === 'medium' ? '0 2rem' : '0 1.5rem'};
     height: ${size === 'full' ? '5rem' : size === 'medium' ? '4rem' : '2.5rem'};
     min-width: ${size === 'full' ? 'unset' : size === 'medium' ? '7rem' : '5rem'};
-    border-radius: ${size === 'full' ? '.4rem' : size === 'medium' ? '.3rem' : '.2rem'};
+    border-radius: ${size === 'full' ? 'var(--borderRadiusBig)' : size === 'medium' ? 'var(--borderRadiusBig)' : '.2rem'};
     ${size === 'full' ? 'width: 100%;' : ''};
   `}
 
@@ -49,19 +49,16 @@ const ButtonStyled = styled.button`
       transition: opacity 1s;
       margin: ${size === 'full' ? '0 -2rem 0 0 !important' : 'auto'};
       margin-left: ${size === 'full' ? '1rem' : 'unset'};
-
-        rect {
-          &:nth-of-type(odd) {
-            fill: #eee
-          }
-          &:nth-of-type(even) {
-            fill: #bbb
-          }
+      rect {
+        &:nth-of-type(odd) {
+          fill: #eee
+        }
+        &:nth-of-type(even) {
+          fill: #bbb
         }
       }
     `}
   }
-
 
   &:not(:disabled):hover {
     background-color: ${({ theme, danger, warning }) => danger

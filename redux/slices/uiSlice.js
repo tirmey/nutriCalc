@@ -12,7 +12,7 @@ const uiSlice = createSlice({
   initialState,
   reducers: {
     setTheme(state, action) {
-      state.theme = action.payload;
+      // state.theme = action.payload;
     },
     isModalOpen(state, action) {
       state.isModalOpen =  action.payload || [];

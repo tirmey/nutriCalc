@@ -10,15 +10,15 @@ const MyTransitionStyled = styled.div`
   }
 
   &[data-animation=animZoom] > div > div {
-    transform: scale(.8) translateY(-90px);
+    transform: scale(.8);
   }
 
   &.enter-done[data-animation=animZoom] > div > div {
-    transform: scale(1) translateY(0);
+    transform: scale(1);
   }
 
   &.exit-active[data-animation=animZoom] > div > div {
-    transform: scale(.8) translateY(-30px);
+    transform: scale(.8);
   }
 
   &.enter-done {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.fieldset`
-  margin-top: 4rem;
+  margin: 2rem 0;
   width: 100%;
   max-height: 30rem;
   position: relative;
@@ -11,10 +11,13 @@ export default styled.fieldset`
   .input-wrapper {
     width: unset;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
+    border: 1px solid #eee;
+    border-radius: var(--borderRadiusBig);
+    padding: .75rem;
   }
 
   &.fieldset-hidden {
@@ -41,6 +44,14 @@ export default styled.fieldset`
       & ~ label {
         padding-right: 1.5rem;
       }
+    }
+  }
+
+  &.fieldset-text {
+    input {
+      max-width: 100%;
+      width: 100%;
+      margin-left: 2rem;
     }
   }
 
@@ -88,6 +99,11 @@ export default styled.fieldset`
   }
 
   &.fieldset-number {
+
+    input {
+      max-width: 5rem;
+    }
+
     @media (max-width: 500px) {
       max-width: unset;
     }
@@ -183,9 +199,19 @@ export default styled.fieldset`
     }
   }
 
+  .input-unit-wrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   label {
     display: flex;
     align-items: center;
+    font-family: var(--fontBold);
+    margin-left: 1rem;
+    font-size: 1.8rem;
   }
 
   ${({ invalidField, theme }) => invalidField && `

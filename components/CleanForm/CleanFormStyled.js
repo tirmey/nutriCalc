@@ -3,13 +3,14 @@ import styled from 'styled-components';
 const CleanFormStyled = styled.div`
   background-color: ${props => props.theme.card || '#fff'};
   color: ${props => props.theme.textPrimary || '#333'};
-  max-width: 80rem;
+  max-width: 97rem;
   position: relative;
   margin: 0 auto;
-  border-radius: ${props => props.theme.borderRadiusBasic || '10px'};
+  border-radius: var(--borderRadiusBasic);
   box-shadow: ${props => props.theme.boxShadowBasic || '0 0 20px -10px rgba(0, 0, 0, 0.35)'};
   transition: background-color .5s;
   pointer-events: ${props => props.submitting ? 'none' : 'all'};
+  display: flex;
 
   @media (max-width: 360px) {
     max-width: unset;
@@ -18,6 +19,7 @@ const CleanFormStyled = styled.div`
 
   form {
     padding: 2.5rem 2.5rem 5rem;
+    width: 100%;
 
     @media (max-width: 500px) {
       padding: 2.5rem 1.5rem;
@@ -43,10 +45,28 @@ const CleanFormStyled = styled.div`
   }
 
   .header-text {
-    text-align: center;
-    padding: 1rem 1.5rem;
-    font-size: 2.5rem;
-    font-weight: bold;
+    background-color: #6B7B99;
+    padding: 3rem 2rem;
+    border-radius: var(--borderRadiusBasic) 0 0 var(--borderRadiusBasic);
+    width: 45rem;
+
+    h3, p {
+      position: sticky;
+    }
+
+    h3 {
+      top: 3rem;
+      font-size: 2.5rem;
+      color: #fff;
+      font-family: var(--fontBold);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      top: 5rem;
+      font-size: 1.5rem;
+      color: #ddd;
+    }
   }
 
   hr {

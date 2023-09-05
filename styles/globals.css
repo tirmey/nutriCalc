@@ -1,7 +1,7 @@
   /*
     To prevent FOUT on NextJs and styled components, please preload fonts on _document Head component and define styledComponents: true in next.config.js file
     */
-  @font-face {
+/*   @font-face {
     font-family: "pgf-regular";
     src: url("/static/fonts/pgfNow/PGF-Now-Regular.woff");
     src: url("/static/fonts/pgfNow/PGF-Now-Regular.otf");
@@ -30,5 +30,20 @@
     src: url("/static/fonts/carrig/CarrigDC-Regular.otf") format("opentype");
     font-style: regular;
     font-weight: 400;
+    font-display: swap;
+  } */
+
+  @font-face {
+    font-family: "source-regular";
+    src: url("/static/fonts/sourceSans/SourceSans3-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "source-bold";
+    src: url("/static/fonts/sourceSans/SourceSans3-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 800;
     font-display: swap;
   }
