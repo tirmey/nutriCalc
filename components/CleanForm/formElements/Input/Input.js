@@ -73,6 +73,7 @@ const Input = ({
       <div className={`input-wrapper ${checked ? 'input-checked' : ''}`}>
         <label htmlFor={id || name} title={title || ''} tabIndex={!notCheckboxOrRadio ? 0 : -1} className={`input-label ${checkFormAnswers(radioAnswers, checked)}`}>
           <span>{!labelText ? null : (!notCheckboxOrRadio || typeof labelText === 'string') ? labelText : labelText(formState)} {(isRequired && notCheckboxOrRadio) && (<span className="required-field-asterisk" title="campo de preenchimento obrigatório">*</span>)}</span>
+          {!!info && notCheckboxOrRadio && <InputInfo info={info} infoClickHandler={infoClickHandler} />}
         </label>
         {!!subtitle && <p className="fieldset-subtitle">{typeof subtitle === 'string' ? subtitle : subtitle(formState)}</p>}
         <div className='input-unit-wrapper'>
@@ -119,7 +120,6 @@ const Input = ({
           <Eye clickHandler={e => showPasswordHandler(e, setPasswordStyle)} classes={`form-password-eye ${info ? 'input-has-info' : ''}`} />
 
         )}
-        {!!info && notCheckboxOrRadio && <InputInfo info={info} infoClickHandler={infoClickHandler} />}
         <ErrorMessage
           msg={!errorMessage && warningMsg ? warningMsg : errorMessage}
           warning={!errorMessage && warningMsg}

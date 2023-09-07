@@ -42,7 +42,7 @@ const DynamicSelectStyled = styled.div`
       font-size: 1.8rem;
 
       &.option-selected {
-        background-color: ${props => props.theme.orange};
+        background-color: ${props => props.theme.accent};
         color: #fff;
         box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.3);
       }

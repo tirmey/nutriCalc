@@ -46,8 +46,7 @@ export default styled.input`
     right: 1.5rem;
     font-family: var(--fontBold);
     font-size: 1.6rem;
-    color: #888;
-
+    color: ${props => props.theme.formFieldUnit};
   }
 
   &.inline-text {
@@ -74,7 +73,7 @@ export default styled.input`
   }
 
   &[inputmode=numeric] {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
 

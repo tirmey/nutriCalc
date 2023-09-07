@@ -15,7 +15,7 @@ export default styled.fieldset`
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    border: 1px solid #eee;
+    border: 1px solid ${props => props.theme.formLines};
     border-radius: var(--borderRadiusBig);
     padding: .75rem;
   }
@@ -37,9 +37,9 @@ export default styled.fieldset`
 
   &.fieldset-text, &.fieldset-number, &.fieldset-email {
     .input-info-container {
-      position: absolute;
-      right: 1rem;
-      bottom: 2rem;
+      /* position: absolute;
+      right: -1rem;
+      top: 0; */
 
       & ~ label {
         padding-right: 1.5rem;
@@ -100,8 +100,12 @@ export default styled.fieldset`
 
   &.fieldset-number {
 
+    .input-unit-wrapper {
+      max-width: 16rem;
+    }
+
     input {
-      max-width: 5rem;
+      max-width: 15rem;
     }
 
     @media (max-width: 500px) {
@@ -199,6 +203,12 @@ export default styled.fieldset`
     }
   }
 
+  &.fieldset-dynamic-select {
+    input {
+      cursor: pointer;
+    }
+  }
+
   .input-unit-wrapper {
     display: flex;
     flex-grow: 1;
@@ -223,24 +233,20 @@ export default styled.fieldset`
   // CSS TRANSITION CONFIG
   &.enter-done:not(:read-only) {
     opacity: 1;
-    max-height: 30rem;
-  }
-
-  &.enter:not(.enter-done) {
-    opacity: 0;
-    max-height: 0;
-    margin: 0;
-    transform: scale(.85);
   }
 
   &.exit-active, &.enter-active {
     opacity: 0;
     max-height: 0;
-    margin: 0;
-    transform: scale(.85);
   }
 
-  &.enter-active, &.enter-done, &.exit-active, &.exit-done {
-    transition: opacity .5s, max-height .5s, margin .5s, transform .5s;
+  &.exit-active, &.exit-done {
+    max-height: 0;
+    margin: 0;
+  }
+
+  &.enter-active, &.enter-done {
+    max-height: 50rem;
+    transform: scale(1);
   }
 `;

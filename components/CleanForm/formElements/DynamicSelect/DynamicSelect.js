@@ -4,6 +4,8 @@ import MyTransition from '../../MyTransition/MyTransition';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import InputStyled from '../Input/InputStyled';
 import DynamicSelectStyled from './DynamicSelectStyled';
+import CaretDown from '../../components/caretDown';
+import DynamicSelectWrapperStyled from './DynamicSelecredWrapperStyled';
 
 const DynamicSelect = props => {
   const {
@@ -110,7 +112,7 @@ const DynamicSelect = props => {
     if (!optionsWithState.length) {
       return internalUpdateStateHandler();
     }
-    const value = e.target.value ? e.target.value.toUpperCase() : '';
+    const value = e.target.value ? e.target.value : '';
     setInputValueHandler(value);
 
     if (minLengthToShow && value.length < minLengthToShow) {
@@ -119,7 +121,7 @@ const DynamicSelect = props => {
     }
 
     setOptionsFiltered(optionsWithState.filter(opt => opt.toLowerCase().includes(value ? value.toLowerCase() : '')));
-    setShowOptions(!optionsWithState.includes(value.toUpperCase()));
+    setShowOptions(!optionsWithState.includes(value));
   };
 
   const selectOptionHandler = e => {
@@ -175,12 +177,11 @@ const DynamicSelect = props => {
   };
 
   return (
-    <>
+    <DynamicSelectWrapperStyled>
       <FieldsetStyled
         className={`fieldset-dynamic-select ${errorMessage ? 'invalid-field' : ''}`}
       >
         <div className='input-wrapper'>
-
           <label className="select-label" htmlFor={name}>
             <span>{typeof labelText === 'string' ? labelText : labelText(formState)} {isRequired && (<span className="required-field-asterisk" title="campo de preenchimento obrigatório">*</span>)}</span>
           </label>
@@ -203,6 +204,7 @@ const DynamicSelect = props => {
             id={name}
             autoComplete="off"
           />
+          <CaretDown classes="open-icon" />
           <ErrorMessage
             msg={!errorMessage && warningMsg ? warningMsg : errorMessage}
             warning={!errorMessage && warningMsg}
@@ -231,7 +233,7 @@ const DynamicSelect = props => {
           </div>
         </MyTransition>
       </DynamicSelectStyled>
-    </>
+    </DynamicSelectWrapperStyled>
   );
 };
 

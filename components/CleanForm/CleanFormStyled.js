@@ -8,9 +8,16 @@ const CleanFormStyled = styled.div`
   margin: 0 auto;
   border-radius: var(--borderRadiusBasic);
   box-shadow: ${props => props.theme.boxShadowBasic || '0 0 20px -10px rgba(0, 0, 0, 0.35)'};
+  border: 1px solid #eee;
   transition: background-color .5s;
   pointer-events: ${props => props.submitting ? 'none' : 'all'};
   display: flex;
+
+  @media (max-width: 768px) {
+    display: block;
+    border-radius: unset;
+    box-shadow: unset;
+  }
 
   @media (max-width: 360px) {
     max-width: unset;
@@ -45,10 +52,16 @@ const CleanFormStyled = styled.div`
   }
 
   .header-text {
-    background-color: #6B7B99;
+    background-color: ${props => props.theme.secondary};
     padding: 3rem 2rem;
     border-radius: var(--borderRadiusBasic) 0 0 var(--borderRadiusBasic);
     width: 45rem;
+
+    @media (max-width: 768px) {
+      display: block;
+      border-radius: unset;
+      width: unset;
+    }
 
     h3, p {
       position: sticky;
@@ -63,7 +76,7 @@ const CleanFormStyled = styled.div`
     }
 
     p {
-      top: 5rem;
+      top: 7rem;
       font-size: 1.5rem;
       color: #ddd;
     }

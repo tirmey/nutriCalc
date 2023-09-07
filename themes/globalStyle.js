@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
       }
 
       &::selection {
-        background: ${props => props.theme.icon};
+        background: ${props => props.theme.secondaryDark};
         color: #fff;
       }
     }

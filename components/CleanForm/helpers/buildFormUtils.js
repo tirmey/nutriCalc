@@ -1,3 +1,4 @@
+import CustomJSX from '../formElements/CustomJSX/CustomJSX';
 import DynamicComponent from '../formElements/DynamicComponent/DynamicComponent';
 import DynamicSelect from '../formElements/DynamicSelect/DynamicSelect';
 import FileUploader from '../formElements/FileUploader/FileUploader';
@@ -225,9 +226,7 @@ const elementBuilder = props => {
           formError={formError}
           setFormError={setFormError}
         >
-          <div className={`custom-jsx ${element.classes || ''}`} key={element.name}>
-            {element.jsx(formState)}
-          </div>
+          <CustomJSX element={element} formState={formState} />
         </WithTransition>
       );
     default:

@@ -35,7 +35,7 @@ const HintStyled = styled.div`
       height: 0;
       border-left: 1rem solid transparent;
       border-right: 1rem solid transparent;
-      border-top: 1rem solid  ${props => props.hintColor || props.theme.primaryDark};
+      border-top: 1rem solid  ${props => props.hintColor || props.theme.secondary};
       opacity: .95;
       display: ${props => props.hideTriangle ? 'none' : 'initial'};
     }
@@ -44,7 +44,7 @@ const HintStyled = styled.div`
       font-size: 1.3rem;
       line-height: 1.9rem;
       color: #fff;
-      background-color: ${props => props.hintColor || props.theme.primaryDark};
+      background-color: ${props => props.hintColor || props.theme.secondary};
       padding: 1rem;
       border-radius: .25rem;
       opacity: .95;

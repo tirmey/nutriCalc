@@ -12,7 +12,8 @@ const InputInfoStyled = styled.div`
   }
 
   &:hover .input-info-icon {
-     fill: ${props => props.theme.iconDark || '#1d3aae'};
+     fill: #e67a2d;
+;
   }
 
   .input-info-hint {
@@ -25,7 +26,7 @@ const InputInfoStyled = styled.div`
     pointer-events: all;
     cursor: pointer;
     pointer-events: none;
-    fill: ${props => props.theme.icon || '#274de6'};
+    fill: #f08639;
     display: flex;
     margin: 0 .5rem;
 
