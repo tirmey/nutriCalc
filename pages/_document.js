@@ -27,20 +27,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang='pt_br'>
         <Head>
-{/*           <link
-            rel="preload"
-            href="/static/fonts/carrig/CarrigDC-Regular.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin='anonymous'
-            />
-          <link
-            rel="preload"
-            href="/static/fonts/pgfNow/PGF-Now-Regular.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin='anonymous'
-          /> */}
           <link
             rel="preload"
             href="/static/fonts/sourceSans/SourceSans3-Regular.ttf"

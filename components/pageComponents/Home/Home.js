@@ -4,7 +4,6 @@ import AnthropoForm from '../../AnthropoForm/AnthropoForm';
 
 const Home = props => {
   const [anthropoState, setAnthropoState] = useState();
-  console.log('anthropoState: >>>>>> ', anthropoState);
 
   return (
     <HomeStyled>

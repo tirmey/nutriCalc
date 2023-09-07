@@ -12,7 +12,7 @@ export default styled.fieldset`
     width: unset;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     align-items: center;
     position: relative;
     border: 1px solid ${props => props.theme.formLines};

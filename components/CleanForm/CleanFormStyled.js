@@ -7,7 +7,6 @@ const CleanFormStyled = styled.div`
   position: relative;
   margin: 0 auto;
   border-radius: var(--borderRadiusBasic);
-  box-shadow: ${props => props.theme.boxShadowBasic || '0 0 20px -10px rgba(0, 0, 0, 0.35)'};
   border: 1px solid #eee;
   transition: background-color .5s;
   pointer-events: ${props => props.submitting ? 'none' : 'all'};
@@ -16,7 +15,6 @@ const CleanFormStyled = styled.div`
   @media (max-width: 768px) {
     display: block;
     border-radius: unset;
-    box-shadow: unset;
   }
 
   @media (max-width: 360px) {

@@ -31,7 +31,7 @@ const styleVars = `
 
   // border-radius
   --borderRadiusSm: 2px;
-  --borderRadiusBasic: 15px;
+  --borderRadiusBasic: 20px;
   --borderRadiusBig: 60px;
 `;
 

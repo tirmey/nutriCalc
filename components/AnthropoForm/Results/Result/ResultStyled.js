@@ -10,6 +10,7 @@ const ResultSyled = styled.div`
 
   @media (max-width: 768px) {
     margin: 1rem;
+    max-width: calc((100vw / 3) - 3rem);
   }
 
   h3 {

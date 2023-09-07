@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: ${props => props.theme.textPrimary};
+    background-color: #fcfffd;
     font-size: 2rem;
     overflow-x: hidden;
     // font-family: var(--fontTitle);
