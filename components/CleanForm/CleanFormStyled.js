@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const CleanFormStyled = styled.div`
   background-color: ${props => props.theme.card || '#fff'};
   color: ${props => props.theme.textPrimary || '#333'};
-  max-width: 97rem;
+  max-width: 85rem;
   position: relative;
   margin: 0 auto;
   border-radius: var(--borderRadiusBasic);

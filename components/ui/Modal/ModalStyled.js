@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ModalStyled = styled.div`
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.65);
   z-index: var(--zIndexModalOverlay);
   transition: opacity .4s, transform .3s;
   backdrop-filter: blur(5px) opacity(1);
@@ -11,30 +11,31 @@ const ModalStyled = styled.div`
     width: 90%;
     max-width: ${props => props.big ? '80rem' : '50rem'} ;
     color:  ${props => props.theme.textPrimary};
-    background: ${props => props.theme.backgroundGradient};
+    background: ${props => props.theme.primary};
     border-radius: 3px;
     position: relative;
     margin-left: -.75rem;
+    border-radius: var(--borderRadiusBasic);
+    box-shadow: 0 0 90px 0 rgba(0, 0, 0, .6);
+    border: 5px solid #639489;
 
     &__header {
-      color:  ${props => { console.log('props: >>>>>> ', props); return props.theme.textLight}};
-      padding: 1rem 2rem;
+      color:  ${props =>  props.theme.textLight};
+      font-family: var(--fontBold);
+      padding: .5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 4px;
     }
 
     &__body {
-      position: relative;
-      top: .75rem;
-      left: .75rem;
-      border-radius: 4px;
       color: ${props => props.theme.textPrimary};
       padding: 2rem;
-      box-shadow: 0 0 10px -1px rgba(0, 0, 0, .6);
+      border-radius: var(--borderRadiusBasic);
       background-color: ${props => props.theme.card};
+      box-shadow: 0 0 7px -2px #000;
       max-height: 90vh;
+      min-height: 10rem;
       overflow: auto;
 
       h1, h2, h3, h4, h5, h6 {
@@ -59,8 +60,7 @@ const ModalStyled = styled.div`
     &__close {
       font-weight: bold;
       cursor: pointer;
-      font-size: 4rem;
-      line-height: 3rem;
+      font-size: 3rem;
     }
   }
 

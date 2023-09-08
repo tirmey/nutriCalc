@@ -26,7 +26,7 @@ const ButtonStyled = styled.button`
 };
 
   ${({ size }) => `
-    font-family: var(--fontTitle);
+    font-family: var(--fontBold);
     font-size: ${size === 'full' ? '2.2rem' : size === 'medium' ? '1.6rem' : '1.2rem'};
     padding: ${size === 'full' ? '0 4rem' : size === 'medium' ? '0 2rem' : '0 1.5rem'};
     height: ${size === 'full' ? '5rem' : size === 'medium' ? '4rem' : '2.5rem'};

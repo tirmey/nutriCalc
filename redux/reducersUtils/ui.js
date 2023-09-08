@@ -5,9 +5,6 @@ export const modalsHandler = (modals, payload, cb) => {
     return { activeModals: modals, isModalOpen: [] };
   }
 
-  console.log('modals: >>>>>> ', modals);
-  console.log('payload: >>>>>> ', payload);
-
   const { modalId, eraseContent, closeAll } = payload;
   const newModals = cloneDeep(modals);
   let openedModals = Object.keys(newModals);
